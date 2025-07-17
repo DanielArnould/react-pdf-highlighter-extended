@@ -46,11 +46,23 @@ npm run dev
 
 ## Installation
 
-`npm install react-pdf-highlighter-extended --save`
+`npm install pdfjs-dist react-pdf-highlighter-extended --save`
+
+or
+
+`yarn add pdfjs-dist react-pdf-highlighter-extended`
 
 ## Usage
 
 Here are some simple usage examples of this library to help you get started with your application. Please note that these examples and explanations are not exhaustive and many additional props are not shown. To see more extensive usage, have a look at the example app or refer to the documentation.
+
+### PDF.js CSS
+
+First all, you should copy `pdfjs-dist/web/pdf_viewer.css` to your `public` folder, then import it in your `index.html` as below:
+
+```html
+<link rel="stylesheet" href="/pdf_viewer.css" />
+```
 
 ### PdfLoader
 

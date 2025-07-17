@@ -11,8 +11,11 @@
   position: absolute;
   background: rgba(255, 226, 143, 1);
   transition: background 0.3s;
+  transition: opacity 0.3s;
 }
 
 .TextHighlight--scrolledTo .TextHighlight__part {
   background: #ff4141;
 }
+
+

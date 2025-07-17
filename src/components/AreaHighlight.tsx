@@ -6,6 +6,7 @@ import "../style/AreaHighlight.css";
 
 import { Rnd } from "react-rnd";
 import type { LTWHP, ViewportHighlight } from "../types";
+import { usePdfHighlighterContext } from "../contexts/PdfHighlighterContext";
 
 /**
  * The props type for {@link AreaHighlight}.
@@ -76,11 +77,15 @@ export const AreaHighlight = ({
   // We don't use position as state because when updating Rnd this would happen and cause flickering:
   // User moves Rnd -> Rnd records new pos -> Rnd jumps back -> highlight updates -> Rnd re-renders at new pos
   const key = `${highlight.position.boundingRect.width}${highlight.position.boundingRect.height}${highlight.position.boundingRect.left}${highlight.position.boundingRect.top}`;
+  const { isSelectionInProgress } = usePdfHighlighterContext();
 
   return (
     <div
       className={`AreaHighlight ${highlightClass}`}
       onContextMenu={onContextMenu}
+      style={{
+        pointerEvents: isSelectionInProgress ? "none" : "auto",
+      }}
     >
       <Rnd
         className="AreaHighlight__part"
@@ -119,7 +124,7 @@ export const AreaHighlight = ({
           event.stopPropagation();
           event.preventDefault();
         }}
-        style={style}
+        style={{ ...style, opacity: isSelectionInProgress ? "0.3" : "1" }}
       />
     </div>
   );

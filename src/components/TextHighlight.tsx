@@ -3,6 +3,7 @@ import React, { CSSProperties, MouseEvent } from "react";
 import "../style/TextHighlight.css";
 
 import type { ViewportHighlight } from "../types";
+import { usePdfHighlighterContext } from "../contexts/PdfHighlighterContext";
 
 /**
  * The props type for {@link TextHighlight}.
@@ -72,6 +73,8 @@ export const TextHighlight = ({
   const highlightClass = isScrolledTo ? "TextHighlight--scrolledTo" : "";
   const { rects } = highlight.position;
 
+  const { isSelectionInProgress } = usePdfHighlighterContext();
+
   return (
     <div
       className={`TextHighlight ${highlightClass}`}
@@ -84,7 +87,12 @@ export const TextHighlight = ({
             onMouseOut={onMouseOut}
             onClick={onClick}
             key={index}
-            style={{ ...rect, ...style }}
+            style={{
+              ...rect,
+              ...style,
+              pointerEvents: isSelectionInProgress ? "none" : "auto",
+              opacity: isSelectionInProgress ? "0.3" : "1",
+            }}
             className={`TextHighlight__part`}
           />
         ))}

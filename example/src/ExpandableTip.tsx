@@ -15,12 +15,8 @@ const ExpandableTip = ({ addHighlight }: ExpandableTipProps) => {
   const [compact, setCompact] = useState(true);
   const selectionRef = useRef<PdfSelection | null>(null);
 
-  const {
-    getCurrentSelection,
-    removeGhostHighlight,
-    setTip,
-    updateTipPosition,
-  } = usePdfHighlighterContext();
+  const { selection, removeGhostHighlight, setTip, updateTipPosition } =
+    usePdfHighlighterContext();
 
   useLayoutEffect(() => {
     updateTipPosition!();
@@ -33,7 +29,7 @@ const ExpandableTip = ({ addHighlight }: ExpandableTipProps) => {
           className="Tip__compact"
           onClick={() => {
             setCompact(false);
-            selectionRef.current = getCurrentSelection();
+            selectionRef.current = selection;
             selectionRef.current!.makeGhostHighlight();
           }}
         >
@@ -49,7 +45,7 @@ const ExpandableTip = ({ addHighlight }: ExpandableTipProps) => {
                 type: selectionRef.current!.type,
                 position: selectionRef.current!.position,
               },
-              input,
+              input
             );
 
             removeGhostHighlight();

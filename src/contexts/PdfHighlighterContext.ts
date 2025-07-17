@@ -16,18 +16,14 @@ export type PdfHighlighterUtils = {
   isEditingOrHighlighting(): boolean;
 
   /**
-   * Get currently selected area or text selection.
-   *
-   * @returns - current selection or `null` if no selection is being made.
+   * Currently selected area or text selection.
    */
-  getCurrentSelection(): PdfSelection | null;
+  selection: PdfSelection | null;
 
   /**
-   * Get the currently present ghost highlight.
-   *
-   * @return - currently present ghost highlight or `null` if non-existent.
+   * Currently present ghost highlight.
    */
-  getGhostHighlight(): GhostHighlight | null;
+  ghostHighlight: GhostHighlight | null;
 
   /**
    * Cancel any ghost highlight.
@@ -43,17 +39,13 @@ export type PdfHighlighterUtils = {
   /**
    * Whether an AreaHighlight is being moved/resized, or a manual highlight edit has
    * been toggled.
-   *
-   * @returns - `true` if AreaHighlight is being edited or edit mode was set.
    */
-  isEditInProgress(): boolean;
+  isEditInProgress: boolean;
 
   /**
    * Whether a mouse selection or text selection is currently being performed.
-   *
-   * @returns - `true` if mouse selection or text selection is being performed.
    */
-  isSelectionInProgress(): boolean;
+  isSelectionInProgress: boolean;
 
   /**
    * Scroll to a highlight in this viewer.
