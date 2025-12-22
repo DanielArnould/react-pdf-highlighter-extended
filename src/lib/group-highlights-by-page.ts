@@ -15,8 +15,9 @@ const groupHighlightsByPage = (
       highlight.position.boundingRect.pageNumber,
       ...highlight.position.rects.map((rect) => rect.pageNumber || 0),
     ];
-
-    pageNumbers.forEach((pageNumber) => {
+    // remove potential duplicate page numbers from text highlights (taken from peterbull pull request)
+    const uniquePageNumbers = new Set<number>(pageNumbers);
+    uniquePageNumbers.forEach((pageNumber) => {
       acc[pageNumber] ||= [];
       const pageSpecificHighlight = {
         ...highlight,

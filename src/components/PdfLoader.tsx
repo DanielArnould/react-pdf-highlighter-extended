@@ -1,8 +1,7 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-
+import { version as pdfjsVersion } from "pdfjs-dist";
 import { GlobalWorkerOptions, OnProgressParameters, getDocument, type PDFDocumentLoadingTask, type PDFDocumentProxy } from "pdfjs-dist";
 import { DocumentInitParameters, TypedArray } from "pdfjs-dist/types/src/display/api";
-
 const DEFAULT_BEFORE_LOAD = (progress: OnProgressParameters) => (
   <div style={{ color: "black" }}>
     Loading {Math.floor((progress.loaded / progress.total) * 100)}%
@@ -18,7 +17,7 @@ const DEFAULT_ON_ERROR = (error: Error) => {
 };
 
 const DEFAULT_WORKER_SRC =
-  "https://unpkg.com/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs";
+  `https://unpkg.com/pdfjs-dist@${pdfjsVersion}/build/pdf.worker.min.mjs`;
 
 /**
  * The props type for {@link PdfLoader}.

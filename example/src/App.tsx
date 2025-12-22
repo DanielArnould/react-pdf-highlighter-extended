@@ -45,7 +45,7 @@ const App = () => {
   const [highlightPen, setHighlightPen] = useState<boolean>(false);
 
   // Refs for PdfHighlighter utilities
-  const highlighterUtilsRef = useRef<PdfHighlighterUtils>();
+  const highlighterUtilsRef = useRef<PdfHighlighterUtils | null>(null);
 
   const toggleDocument = () => {
     const urls = [PRIMARY_PDF_URL, SECONDARY_PDF_URL];
