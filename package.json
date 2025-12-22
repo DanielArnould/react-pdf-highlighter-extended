@@ -1,26 +1,17 @@
 {
-  "name": "react-pdf-highlighter-extended",
+  "name": "react-pdf-highlighter-extended-plus",
   "type": "module",
-  "version": "8.1.0",
-  "description": "Set of modern React components for PDF highlighting",
-  "author": "Daniel Arnould <daniel.s.arnould@gmail.com>",
+  "version": "1.0.0",
+  "description": "React 19 compatible PDF highlighter with page selection, PDF.js worker fixes, and modern enhancements",
+  "author": "gyro-mc <dilmiabderrahmane9@gmail.com>",
   "license": "MIT",
-  "contributors": [
-    {
-      "name": "Daniel Arnould",
-      "email": "daniel.s.arnould@gmail.com"
-    },
-    {
-      "name": "Artem Tyurin",
-      "email": "artem.tyurin@gmail.com"
-    }
-  ],
   "keywords": [
     "pdf",
     "highlight",
     "annotator",
     "react-component",
-    "react"
+    "react",
+    "react19"
   ],
   "files": [
     "dist"
@@ -48,10 +39,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DanielArnould/react-pdf-highlighter.git"
+    "url": "git+https://github.com/gyro-mc/react-pdf-highlighter-extended-plus.git"
   },
   "bugs": {
-    "url": "https://github.com/DanielArnould/react-pdf-highlighter-extended/issues"
+    "url": "https://github.com/gyro-mc/react-pdf-highlighter-extended-plus/issues"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.9",
