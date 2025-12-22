@@ -38,8 +38,8 @@
     "clean": "rm -rf dist public node_modules package-lock.json"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": ">=18.3.1 <20",
+    "react-dom": ">=18.3.1 <20"
   },
   "dependencies": {
     "lodash.debounce": "^4.0.8",
@@ -56,9 +56,11 @@
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.9",
     "@types/node": "^20.14.9",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.3.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "typedoc": "latest",
     "typedoc-theme-category-nav": "latest",
     "typescript": "^5.3.2",
