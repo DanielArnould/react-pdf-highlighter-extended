@@ -269,7 +269,7 @@ export const PdfHighlighter = ({
       doc.removeEventListener("keydown", handleKeyDown);
       resizeObserverRef.current?.disconnect();
     };
-  }, [selectionTip, highlights, onSelectionFinished]);
+  }, [selectionTip, highlights, onSelectionFinished, pdfScaleValue]);
 
   // Event listeners
   const handleScroll = () => {
